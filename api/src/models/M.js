@@ -1,11 +1,17 @@
-const mongoose = require('mongoose'); // importa biblioteca
+const mongoose = require("mongoose");
 
-const Musica = mongoose.model('Musica', {
-    nome: String,
-    artista: String,
-    minutagem: Number,
-    descricao: String,
-    feat: Boolean
+const MusicaSchema = new mongoose.Schema({
+
+    nome:String,
+
+    artista:String,
+
+    capa:String
+
 });
 
-module.exports = Musica;
+module.exports =
+mongoose.model(
+    "Musica",
+    MusicaSchema
+);

@@ -1,21 +1,53 @@
-const express = require('express');
+const express = require("express");
+
 const router = express.Router();
 
-const ClienteController = require('../controllers/ClienteController');
+const Usuario =
+require("../models/U");
 
-// Criar cliente
-router.post('/', ClienteController.create);
+router.get("/", async(req,res)=>{
 
-// Buscar todos os clientes
-router.get('/', ClienteController.getAll);
+    const usuarios =
+    await Usuario.find()
 
-// Buscar cliente por ID
-router.get('/:id', ClienteController.getById);
+    .populate("curtidas");
 
-// Atualizar cliente
-router.put('/:id', ClienteController.update);
+    res.send(usuarios);
 
-// Deletar cliente
-router.delete('/:id', ClienteController.delete);
+});
+
+router.post("/", async(req,res)=>{
+
+    const usuario =
+    await Usuario.create(req.body);
+
+    res.send(usuario);
+
+});
+
+router.put("/:id/curtir", async(req,res)=>{
+
+    const usuario =
+    await Usuario.findById(req.params.id);
+
+    const musicaId =
+    req.body.musicaId;
+
+    const jaCurtiu =
+    usuario.curtidas.includes(musicaId);
+
+    if(!jaCurtiu){
+
+        usuario.curtidas.push(
+            musicaId
+        );
+
+    }
+
+    await usuario.save();
+
+    res.send(usuario);
+
+});
 
 module.exports = router;

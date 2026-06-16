@@ -1,21 +1,19 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const Compra = mongoose.model('Compra', {
-    clienteId: {
-        type:mongoose.Schema.Types.ObjectId,
-        ref: 'Cliente'
-    },
-    produtoId: {
+const PlaylistSchema = new mongoose.Schema({
+    nome: String,
+
+    usuario: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Produto'
+        ref: "Usuario"
     },
-    quantidade: Number,
 
-    data: {
-        type: Date,
-        default: Date.now()
+    musicas: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Musica"
+        }
+    ]
+});
 
-    }
-})
-
-module.exports = Compra;
+module.exports = mongoose.model("Playlist", PlaylistSchema);

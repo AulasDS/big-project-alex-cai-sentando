@@ -1,6 +1,6 @@
 const Album = require('../models/A');
 
-const aController = {
+const AlbumController = {
     // POST '/'
     create: async (req, res) => {
         try {
@@ -126,4 +126,4 @@ const aController = {
     }
 };
 
-module.exports = albumController;
+module.exports = AlbumController;

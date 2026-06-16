@@ -1,0 +1,47 @@
+.login{
+    width:100%;
+    height:100vh;
+    background:black;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+
+    h1{
+        font-size:70px;
+        margin-bottom:60px;
+    }
+
+    .users{
+        display:flex;
+        gap:50px;
+    }
+
+    .user{
+        cursor:pointer;
+        transition:.3s;
+
+        &:hover{
+            transform:scale(1.05);
+        }
+
+        img{
+            width:220px;
+            height:220px;
+            border-radius:20px;
+            object-fit:cover;
+            border:5px solid transparent;
+
+            &:hover{
+                border-color:#1db954;
+            }
+        }
+
+        h2{
+            margin-top:20px;
+            text-align:center;
+            font-size:30px;
+        }
+    }
+}

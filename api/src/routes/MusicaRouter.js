@@ -1,11 +1,26 @@
-const express = require('express');
-const router = express.Router();
-const musicaController = require('../controllers/MusicaController');
+const express = require("express");
 
-router.post('/', musicaController.create);
-router.get('/', musicaController.getAll);
-router.get('/:id', musicaController.getById);
-router.put('/:id', musicaController.update);
-router.delete('/:id', musicaController.delete);
+const router = express.Router();
+
+const Musica =
+require("../models/M");
+
+router.get("/", async(req,res)=>{
+
+    const musicas =
+    await Musica.find();
+
+    res.send(musicas);
+
+});
+
+router.post("/", async(req,res)=>{
+
+    const musica =
+    await Musica.create(req.body);
+
+    res.send(musica);
+
+});
 
 module.exports = router;
