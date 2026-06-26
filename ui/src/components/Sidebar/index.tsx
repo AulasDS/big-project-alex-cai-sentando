@@ -21,15 +21,15 @@ function Sidebar(){
             <nav>
 
                 <Link to="/">
-                    🏠 Home
+                    Home
                 </Link>
 
                 <Link to="/biblioteca">
-                    📚 Sua Biblioteca
+                    Sua Biblioteca
                 </Link>
 
                 <Link to="/login">
-                    👤 Trocar Conta
+                    Contas
                 </Link>
 
             </nav>
