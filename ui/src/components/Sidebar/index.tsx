@@ -24,10 +24,6 @@ function Sidebar(){
                     🏠 Home
                 </Link>
 
-                <Link to="/buscar">
-                    🎵 Buscar
-                </Link>
-
                 <Link to="/biblioteca">
                     📚 Sua Biblioteca
                 </Link>
@@ -38,21 +34,7 @@ function Sidebar(){
 
             </nav>
 
-            <div className={styles.playlist}>
-
-                <h3>
-                    Crie sua primeira playlist
-                </h3>
-
-                <p>
-                    É fácil, vamos te ajudar.
-                </p>
-
-                <button>
-                    Criar playlist
-                </button>
-
-            </div>
+        
 
             {
 

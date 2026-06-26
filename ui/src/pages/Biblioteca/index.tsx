@@ -6,7 +6,7 @@ import { musicas } from "../../data/musicas";
 
 import Sidebar from "../../components/Sidebar";
 
-import Navbar from "../../components/Navbar";
+import Navbar from "../../components/navBar";
 
 import styles from "./style.module.scss";
 
@@ -49,23 +49,9 @@ function Biblioteca(){
                     <img src={usuario.foto} />
 
                     <div>
-
                         <span>Perfil</span>
 
-                        <h1>
-                            {usuario.nome}
-                        </h1>
-
-                        <p>
-
-                            {
-                                musicasCurtidas.length
-                            }
-
-                            {" "} músicas curtidas
-
-                        </p>
-
+                        <h1>{usuario.nome}</h1>
                     </div>
 
                 </div>

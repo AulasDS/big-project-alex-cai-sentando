@@ -20,10 +20,7 @@ function Navbar({ busca, setBusca }: NavbarProps) {
                 onChange={(e) => setBusca && setBusca(e.target.value)}
             />
 
-            <div>
-                <button>Inscrever-se</button>
-                <button>Entrar</button>
-            </div>
+            
 
         </header>
     )
