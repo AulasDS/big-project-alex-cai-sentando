@@ -34,11 +34,21 @@ function Login(){
 
     function entrar(user:any){
 
+    const salvo = localStorage.getItem(`usuario_${user.id}`);
+
+    if(salvo){
+
+        setUsuario(JSON.parse(salvo));
+
+    }else{
+
         setUsuario(user);
 
-        navigate("/");
-
     }
+
+    navigate("/");
+
+}
 
     return(
 

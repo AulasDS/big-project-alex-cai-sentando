@@ -24,14 +24,19 @@ export function UserProvider({ children }:any){
 
     function salvarUsuario(user:any){
 
-        setUsuario(user);
+    setUsuario(user);
 
-        localStorage.setItem(
-            "spotify_user",
-            JSON.stringify(user)
-        );
+    localStorage.setItem(
+        "spotify_user",
+        JSON.stringify(user)
+    );
 
-    }
+    localStorage.setItem(
+        `usuario_${user.id}`,
+        JSON.stringify(user)
+    );
+
+}
 
     function curtirMusica(id:number){
 
