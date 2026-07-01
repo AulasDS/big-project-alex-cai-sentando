@@ -1,0 +1,56 @@
+.buscar{
+    min-height:100vh;
+    margin-left:250px;
+    background:#121212;
+    padding:40px;
+    color:white;
+
+    h1{
+        font-size:45px;
+        margin-bottom:30px;
+    }
+
+    .generos{
+        display:grid;
+        grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+        gap:20px;
+
+        div{
+            height:160px;
+            border-radius:15px;
+            padding:20px;
+            font-size:30px;
+            font-weight:bold;
+            cursor:pointer;
+            transition:.3s;
+
+            &:hover{
+                transform:scale(1.03);
+            }
+        }
+    }
+
+    .pop{
+        background:#ff0050;
+    }
+
+    .rock{
+        background:#1e3264;
+    }
+
+    .funk{
+        background:#8400e7;
+    }
+
+    .rap{
+        background:#ba5d07;
+    }
+
+    .trap{
+        background:#148a08;
+    }
+
+    .indie{
+        background:#e91429;
+    }
+}
